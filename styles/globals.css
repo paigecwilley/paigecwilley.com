@@ -1,16 +1,41 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#__next {
+  min-height: 100vh;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer base {
+  @font-face {
+    font-family: "HindSiliguri";
+    font-weight: 300;
+    src: url("/fonts/HindSiliguri-Light.ttf");
+  }
+  @font-face {
+    font-family: "HindSiliguri";
+    font-weight: 400;
+    src: url("/fonts/HindSiliguri-Regular.ttf");
+  }
+  @font-face {
+    font-family: "HindSiliguri";
+    font-weight: 600;
+    src: url("/fonts/HindSiliguri-SemiBold.ttf");
+  }
 
-* {
-  box-sizing: border-box;
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply text-lg;
+  }
 }
