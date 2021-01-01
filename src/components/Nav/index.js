@@ -8,7 +8,7 @@ const linksList = [
 
 const Nav = () => {
   return (
-    <nav className="bg-gray-200 py-9 ">
+    <nav className="bg-gray-200 py-9 px-8 fixed w-full z-10 shadow-sm">
       <div
         className="max-w-7xl flex justify-between"
         style={{ margin: "0 auto" }}
@@ -19,10 +19,7 @@ const Nav = () => {
 
         <ul className="flex justify-end">
           {linksList.map((link) => (
-            <li
-              key={link.link}
-              className="inline text-xl font-semibold first:mr-4"
-            >
+            <li key={link.link} className="inline text-xl font-semibold">
               <Link href={link.link}>{link.label}</Link>
             </li>
           ))}

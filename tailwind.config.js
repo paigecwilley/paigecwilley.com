@@ -5,7 +5,6 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      // sans: ["NunitoSans", ...defaultTheme.fontFamily.sans],
       sans: ["HindSiliguri", ...defaultTheme.fontFamily.sans],
     },
     extend: {
@@ -14,13 +13,24 @@ module.exports = {
       },
       fontFamily: {
         sans: ["HindSiliguri", ...defaultTheme.fontFamily.sans],
-        // sans: ["NunitoSans", ...defaultTheme.fontFamily.sans],
+      },
+      keyframes: {
+        wave: {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(-5deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "75%": { transform: "rotate(-5deg)" },
+        },
+      },
+      animation: {
+        wave: "wave 1s ease-in-out 250ms 3",
       },
     },
   },
   variants: {
     extend: {
-      margin: ["first"],
+      margin: ["first", "last"],
+      outline: ["focus", "hover", "active"],
     },
   },
   plugins: [require("@tailwindcss/typography")],
