@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import SkillList from "./SkillList";
+import Button from "../Button";
 
 const HomeSkills = () => {
   const [skillSet, setSkillSet] = useState("general");
@@ -37,28 +38,22 @@ const HomeSkills = () => {
           longer.
         </h4>
       </div>
-      <div className="flex">
-        <div className="mr-5  self-start text-left bg-gray-200 flex flex-col rounded-lg flex-2 p-9">
-          <button
-            className={`text-left p-3 mb-4 bg-white border-2 border-gray-500 rounded-md" +
-              ${
-                skillSet === "general" ? "border-gray-600" : "border-gray-500"
-              }`}
-            onClick={() => setSkillSet("general")}
+      <div className="flex flex-col lg:flex-row">
+        <div className="mb-4 lg:mb-0 lg:mr-5  lg:self-start text-left bg-gray-50 flex flex-col rounded-lg shadow-md lg:flex-2 p-9">
+          <Button
+            active={skillSet === "general"}
+            click={() => setSkillSet("general")}
           >
             General
-          </button>
-          <button
-            className={
-              "text-left p-3 mb-4 bg-white border-2 border-green-200 rounded-md" +
-              (skillSet !== "specific" ? "border-blue-200" : "border-green-200")
-            }
-            onClick={() => setSkillSet("specific")}
+          </Button>
+          <Button
+            active={skillSet === "specific"}
+            click={() => setSkillSet("specific")}
           >
-            A litte more specific
-          </button>
+            A little more specific ...
+          </Button>
         </div>
-        <div className="py-12 px-12 bg-gray-50 rounded-lg flex-1 flex items-center shadow-sm">
+        <div className="py-12 px-12 bg-gray-50 rounded-lg flex-1 flex items-center shadow-md">
           {skillSet === "general" ? (
             <SkillList list={generalSkills} />
           ) : (

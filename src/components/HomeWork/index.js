@@ -3,17 +3,17 @@ import Image from "next/image";
 
 const WorkList = [
   {
+    id: "NFJS",
     image: "/static/images/netflix_jobs_grid.png",
     headline: "Netflix Job Site",
     paragraph:
       "V2 of the Netflix Job site. Moved from a REST API to Graphql to query content from Contentful. Built the blog and refreshed designs including architecting the content model and displaying the multimedia grid (pictured).",
-    // paragraph:
-    //   "V2 of the Netflix Jobs site went from just finding jobs to learning what it's really like to work at Netflix.",
     stack: ["NextJS", "Contentful", "Apollo Graphql"],
     type: "Front-end",
   },
 
   {
+    id: "NFIT",
     image: "/static/images/vendor_survey_crop.png",
     headline: "Netflix Internal Product",
     paragraph:
@@ -24,7 +24,7 @@ const WorkList = [
 ];
 
 const WorkBlock = ({ image, headline, paragraph, type, stack }) => (
-  <div className="w-1/2 first:mr-5 text-gray-700">
+  <div className="lg:w-1/2 lg:first:mr-5 text-gray-700">
     <div
       className="rounded-md shadow-md relative w-full mb-4"
       style={{ height: 370 }}
@@ -35,7 +35,7 @@ const WorkBlock = ({ image, headline, paragraph, type, stack }) => (
       <h3 className="mb-3 text-gray-700 font-semibold">{headline}</h3>
       <p className="text-gray-700 max-w-sm">{paragraph}</p>
     </div>
-    <div className="inline-grid grid-cols-2 gap-5">
+    <div className="inline-grid grid-cols-2 gap-5 mb-8 lg:mb-0">
       <div>
         <p className="font-semibold">Type</p>
         <p>{type}</p>
@@ -44,7 +44,7 @@ const WorkBlock = ({ image, headline, paragraph, type, stack }) => (
         <p className="font-semibold">Stack</p>
         <ul>
           {stack.map((stackTech) => (
-            <li>{stackTech}</li>
+            <li key={stackTech}>{stackTech}</li>
           ))}
         </ul>
       </div>
@@ -56,13 +56,13 @@ const HomeWork = () => {
   return (
     <div className="my-20">
       <h2 className="font-sans font-semibold text-gray-700">Work</h2>
-      <h4 className="max-w-2xl mb-4 text-lg">
+      <h4 className="max-w-2xl mb-8 text-lg">
         Quite a bit of my work is hidden behind a VPN (super top secret) or is
         lost to the Wayback Machine thanks to fast-moving marketing initiatives
         or clients being acquired. So this is just a peek.
       </h4>
 
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         {WorkList.map((workItem) => (
           <WorkBlock {...workItem} key={workItem.headline} />
         ))}
