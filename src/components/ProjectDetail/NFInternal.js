@@ -1,55 +1,7 @@
 import React, { useState } from "react";
-import Image from "next/image";
-
-const Rundown = () => {
-  return (
-    <>
-      <h3 className="text-gray-700 font-semibold">Project Overview</h3>
-      <body className="text-gray-600">
-        As this is an internal Netflix tool, I can't say a ton about it. Here's
-        what I can tell you. Netflix needed a tool for receiving, viewing, and
-        editing A LOT of data. They also needed a way to build surveys similar
-        to Google Forms and send those surveys to others and then handle that
-        data too. This project involved a lot of people including myself on
-        front-end, a backend dev, and the project lead on my team's side
-        building this.
-      </body>
-    </>
-  );
-};
-
-const Contribution = () => {
-  return (
-    <>
-      <h3>My contribution</h3>
-      <body>
-        Basically, I did the front-end for this project with some help from the
-        project lead, with whom I had some pair sessions. I queried all the data
-        from the database our backend engineer built. I built countless tables
-        and grids for displaying data and almost as many inputs for altering
-        data (so many mutations!). This was the most involved and extensive
-        project I've undertaken with Apollo Graphql. I created a couple search
-        features. I handled countless UI details.
-      </body>
-    </>
-  );
-};
-
-const ImageCreator = ({ imageUrl, width, minHeightOptional }) => {
-  return (
-    <div
-      className={`h-72 lg:h-96 rounded-lg relative shadow-md w-full lg:${width}`}
-      style={{ minHeight: minHeightOptional ? "auto" : "32rem" }}
-    >
-      <Image
-        src={imageUrl}
-        layout="fill"
-        objectFit="cover"
-        className="rounded-lg"
-      />
-    </div>
-  );
-};
+import Overview from "./Overview";
+import ImageRundown from "./ImageRundown";
+import ImageCreator from "./ProjectImageCreator";
 
 const imageSets = [
   {
@@ -83,7 +35,7 @@ const imageSets = [
   {
     title: "Writing a Diff Engine",
     paragraph:
-      "This is the part of the project I'm most proud of. Netflix wanted to compare similar sets of data over time. If the data for time B was different from time A, I highlighted how it was different by showing data that had changed, been added, or been removed from the previous snapshot. This involved comparing large sets of data to each other and manipulating the data in such a way that we could still see everything we needed. The different colors indicate items that have changed, been added, or been removed.",
+      "This is the part of the project I'm most proud of. Netflix wanted to compare similar sets of data over time. If the data for October was different from September, I highlighted how it was different by showing both October and September’s data and highlighting in the October data what had changed, been removed, or been added from the September data (the colored outlines in the image). This involved comparing large sets of data to each other and manipulating the data in such a way that we could still see everything we needed.",
     orientation: "left",
     paragraphW: "w-1/2",
     imageSetup: (
@@ -92,30 +44,6 @@ const imageSets = [
   },
 ];
 
-const ImageRundown = () => {
-  return (
-    <>
-      {imageSets.map((set) => (
-        <div
-          className={`flex mb-20 flex-col ${
-            set.orientation === "left" ? "lg:flex-row" : "lg:flex-row-reverse"
-          }`}
-        >
-          <div
-            className={`bg-gray-300 rounded-lg p-9 ${
-              set.orientation === "left" ? "lg:mr-4" : "lg:ml-4"
-            } w-full mb-4 lg:mb-0 lg:${set.paragraphW}`}
-          >
-            <h3 className="mb-5 text-gray-700 font-semibold">{set.title}</h3>
-            <p>{set.paragraph}</p>
-          </div>
-          {set.imageSetup}
-        </div>
-      ))}
-    </>
-  );
-};
-
 const stack = [
   "NextJS (React)",
   "Material UI",
@@ -123,38 +51,27 @@ const stack = [
   "React Testing Library",
 ];
 
-const Intro = () => {
-  return (
-    <div className="flex flex-col lg:flex-row mb-20">
-      <div className="w-full order-2 lg:order-1 lg:w-1/4 bg-gray-50 p-9 rounded-lg shadow-md mb-4 lg:mb-0 lg:mr-4">
-        <h3 className="text-gray-700 font-semibold">Stack</h3>
-        <ul>
-          {stack.map((stackItem) => (
-            <li key={stackItem}>{stackItem}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="w-full order-1 lg:order-2 lg:w-1/2 bg-gray-50 p-9 rounded-lg shadow-md mb-4 lg:mb-0 lg:mr-4">
-        <Rundown />
-      </div>
-      <div className="w-full order-3 lg:w-1/4 bg-gray-50 bg-gray-50 p-9 rounded-lg shadow-md">
-        <h3 className="text-gray-700 font-semibold">Learning New Things</h3>
-        <ul>
-          <li className="text-gray-600">Postgres</li>
-          <li className="text-gray-600">Netflix Design System</li>
-          <li className="text-gray-600">Writing backend migrations</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
 const NFInternal = () => {
   return (
     <div className="my-20 max-w-6xl">
-      <h2 className="font-semibold mb-20">Netflix Jobsite</h2>
-      <Intro />
-      <ImageRundown />
+      <h2 className="font-semibold mb-20">Netflix Internal Tool</h2>
+      <Overview
+        rundownText=" As this is an internal Netflix tool, I can't say a ton about it. Here's
+        what I can tell you: Netflix needed a tool for receiving, viewing, and
+        editing A LOT of data. They also needed a custom survey builder tool
+        that did everything Google Forms does and then some. I built the
+        front-end for this project and queried all the data from the database
+        our backend engineer built using a Graphql server. I build countless
+        tables and grids for displaying data and just as many inputs for
+        altering data (so many mutations!)"
+        stack={stack}
+        newThings={[
+          "Postgres",
+          "Netflix Design System",
+          "Writing backend migrations",
+        ]}
+      />
+      <ImageRundown imageSets={imageSets} />
     </div>
   );
 };

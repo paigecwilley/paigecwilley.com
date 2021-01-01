@@ -7,6 +7,12 @@ module.exports = {
     fontFamily: {
       sans: ["HindSiliguri", ...defaultTheme.fontFamily.sans],
     },
+    height: {
+      48: "12rem",
+      60: "15rem",
+      96: "24rem",
+      108: "32rem",
+    },
     extend: {
       listStyleType: {
         circle: "circle",
