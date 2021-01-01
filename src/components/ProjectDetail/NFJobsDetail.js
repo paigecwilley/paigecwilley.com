@@ -36,36 +36,6 @@ const imageSets = [
   },
 ];
 
-// const ImageRundown = () => {
-//   return (
-//     <>
-//       {imageSets.map((set) => (
-//         <div
-//           className={`flex mb-20 ${
-//             set.orientation === "left" ? "flex-row" : "flex-row-reverse"
-//           }`}
-//         >
-//           <div
-//             className={`w-1/3 bg-green-100 rounded-lg p-9 ${
-//               set.orientation === "left" ? "mr-4" : "ml-4"
-//             }`}
-//           >
-//             <h3 className="mb-5">{set.title}</h3>
-//             <p>{set.paragraph}</p>
-//           </div>
-//           <div />
-//           <div
-//             className="h-96 relative shadow-md"
-//             style={{ width: "750px", height: "500px" }}
-//           >
-//             <Image src={set.image} layout="fill" objectFit="cover" />
-//           </div>
-//         </div>
-//       ))}
-//     </>
-//   );
-// };
-
 const NFJobsDetail = () => {
   return (
     <div className="my-20 max-w-6xl">

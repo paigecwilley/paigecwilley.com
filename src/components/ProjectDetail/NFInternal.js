@@ -5,7 +5,6 @@ import ImageCreator from "./ProjectImageCreator";
 
 const imageSets = [
   {
-    image: "/static/images/netflix_blog.png",
     title: "Duplicating Google Forms",
     paragraph:
       "The Netflix team on this project needed a way to create surveys similar to Google Forms to send but integrated into the tool and able to handle additional data points. This had a lot of fun features like dragging and dropping of sections and questions, figuring out how to add and remove questions and sections anywhere, and handling multiple kinds of inputs.",
@@ -21,7 +20,7 @@ const imageSets = [
   {
     title: "A comment section that's not scary",
     paragraph:
-      "Part of the project required a 'feedback' and 'comment' section on one page. This part of the project intimidated me initially from both a ui and a mutation standpoint. Some of this feature's unique challenges included creating a 'recursive ui', making sure a list of 'infinit' comments showed up 'like in Facebook', adding @ mentions to other users, and debouncing.",
+      "Part of the project required a 'feedback' and 'comment' section on one page. This part of the project intimidated me initially from both a ui and a mutation standpoint. Some of this feature's unique challenges included creating a 'recursive ui', making sure a list of 'infinite' comments showed up 'like in Facebook', adding @ mentions to other users, and debouncing.",
     orientation: "right",
     paragraphW: "w-1/2",
     imageSetup: (
@@ -61,7 +60,7 @@ const NFInternal = () => {
         editing A LOT of data. They also needed a custom survey builder tool
         that did everything Google Forms does and then some. I built the
         front-end for this project and queried all the data from the database
-        our backend engineer built using a Graphql server. I build countless
+        our backend engineer built using a Graphql server. I built countless
         tables and grids for displaying data and just as many inputs for
         altering data (so many mutations!)"
         stack={stack}

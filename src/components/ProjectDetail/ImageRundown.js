@@ -5,6 +5,7 @@ const ImageRundown = ({ imageSets }) => {
     <>
       {imageSets.map((set) => (
         <div
+          key={set.title}
           className={`flex mb-20 flex-col ${
             set.orientation === "left" ? "lg:flex-row" : "lg:flex-row-reverse"
           }`}
