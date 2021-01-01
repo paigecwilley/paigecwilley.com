@@ -4,7 +4,7 @@ import Image from "next/image";
 const Rundown = () => {
   return (
     <>
-      <h3 className="text-gray-400 font-semibold">Project Overview</h3>
+      <h3 className="text-gray-700 font-semibold">Project Overview</h3>
       <body className="text-gray-600">
         As this is an internal Netflix tool, I can't say a ton about it. Here's
         what I can tell you. Netflix needed a tool for receiving, viewing, and
@@ -35,6 +35,22 @@ const Contribution = () => {
   );
 };
 
+const ImageCreator = ({ imageUrl, width, minHeightOptional }) => {
+  return (
+    <div
+      className={`h-72 lg:h-96 rounded-lg relative shadow-md w-full lg:${width}`}
+      style={{ minHeight: minHeightOptional ? "auto" : "32rem" }}
+    >
+      <Image
+        src={imageUrl}
+        layout="fill"
+        objectFit="cover"
+        className="rounded-lg"
+      />
+    </div>
+  );
+};
+
 const imageSets = [
   {
     image: "/static/images/netflix_blog.png",
@@ -44,32 +60,24 @@ const imageSets = [
     orientation: "left",
     paragraphW: "w-1/3",
     imageSetup: (
-      <div
-        className="h-96  relative shadow-md w-2/3"
-        style={{ minHeight: "32rem" }}
-      >
-        <Image
-          src="/static/images/vendor_survey_crop.png"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+      <ImageCreator
+        imageUrl="/static/images/vendor_survey_crop.png"
+        width="w-2/3"
+      />
     ),
   },
   {
     title: "A comment section that's not scary",
     paragraph:
-      "Part of the project required a 'feedback' and 'comment' section on one page. This part of the project intimated me initially from both a ui and a mutation standpoint. Making sure that an 'infinite'  list of comments shows up 'like in Facebook', adding @ mentions to other users, and debouncing all presented unique challenges. ",
+      "Part of the project required a 'feedback' and 'comment' section on one page. This part of the project intimidated me initially from both a ui and a mutation standpoint. Some of this feature's unique challenges included creating a 'recursive ui', making sure a list of 'infinit' comments showed up 'like in Facebook', adding @ mentions to other users, and debouncing.",
     orientation: "right",
     paragraphW: "w-1/2",
     imageSetup: (
-      <div className="h-96 relative shadow-md w-1/2">
-        <Image
-          src="/static/images/nf_feedback.png"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+      <ImageCreator
+        imageUrl="/static/images/nf_feedback.png"
+        width="w-1/2"
+        minHeightOptional
+      />
     ),
   },
   {
@@ -79,16 +87,7 @@ const imageSets = [
     orientation: "left",
     paragraphW: "w-1/2",
     imageSetup: (
-      <div
-        className="h-96  relative shadow-md w-1/2"
-        style={{ minHeight: "32rem" }}
-      >
-        <Image
-          src="/static/images/diff_engine.png"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+      <ImageCreator imageUrl="/static/images/diff_engine.png" width="w-1/2" />
     ),
   },
 ];
@@ -98,16 +97,16 @@ const ImageRundown = () => {
     <>
       {imageSets.map((set) => (
         <div
-          className={`flex mb-20 ${
-            set.orientation === "left" ? "flex-row" : "flex-row-reverse"
+          className={`flex mb-20 flex-col ${
+            set.orientation === "left" ? "lg:flex-row" : "lg:flex-row-reverse"
           }`}
         >
           <div
             className={`bg-gray-300 rounded-lg p-9 ${
-              set.orientation === "left" ? "mr-4" : "ml-4"
-            } ${set.paragraphW}`}
+              set.orientation === "left" ? "lg:mr-4" : "lg:ml-4"
+            } w-full mb-4 lg:mb-0 lg:${set.paragraphW}`}
           >
-            <h3 className="mb-5">{set.title}</h3>
+            <h3 className="mb-5 text-gray-700 font-semibold">{set.title}</h3>
             <p>{set.paragraph}</p>
           </div>
           {set.imageSetup}
@@ -117,32 +116,44 @@ const ImageRundown = () => {
   );
 };
 
+const stack = [
+  "NextJS (React)",
+  "Material UI",
+  "Apollo Graphql",
+  "React Testing Library",
+];
+
+const Intro = () => {
+  return (
+    <div className="flex flex-col lg:flex-row mb-20">
+      <div className="w-full order-2 lg:order-1 lg:w-1/4 bg-gray-50 p-9 rounded-lg shadow-md mb-4 lg:mb-0 lg:mr-4">
+        <h3 className="text-gray-700 font-semibold">Stack</h3>
+        <ul>
+          {stack.map((stackItem) => (
+            <li key={stackItem}>{stackItem}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="w-full order-1 lg:order-2 lg:w-1/2 bg-gray-50 p-9 rounded-lg shadow-md mb-4 lg:mb-0 lg:mr-4">
+        <Rundown />
+      </div>
+      <div className="w-full order-3 lg:w-1/4 bg-gray-50 bg-gray-50 p-9 rounded-lg shadow-md">
+        <h3 className="text-gray-700 font-semibold">Learning New Things</h3>
+        <ul>
+          <li className="text-gray-600">Postgres</li>
+          <li className="text-gray-600">Netflix Design System</li>
+          <li className="text-gray-600">Writing backend migrations</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 const NFInternal = () => {
   return (
     <div className="my-20 max-w-6xl">
       <h2 className="font-semibold mb-20">Netflix Jobsite</h2>
-      <div className="flex flex-row mb-20">
-        <div className=" w-1/4 bg-gray-50 p-9 rounded-lg shadow-md mr-4">
-          <h3 className="text-gray-400 font-semibold">Stack</h3>
-          <ul>
-            <li className="text-gray-600">NextJS (React)</li>
-            <li className="text-gray-600">Material UI</li>
-            <li className="text-gray-600">Apollo Graphql</li>
-            <li className="text-gray-600">React Testing Library</li>
-          </ul>
-        </div>
-        <div className="w-1/2 bg-gray-50 p-9 rounded-lg shadow-md mr-4">
-          <Rundown />
-        </div>
-        <div className="w-1/4 bg-gray-50 bg-gray-50 p-9 shadow-md">
-          <h3 className="text-gray-400 font-semibold">Learning New Things</h3>
-          <ul>
-            <li className="text-gray-600">Postgres</li>
-            <li className="text-gray-600">Netflix Design System</li>
-            <li className="text-gray-600">Writing backend migrations</li>
-          </ul>
-        </div>
-      </div>
+      <Intro />
       <ImageRundown />
     </div>
   );
