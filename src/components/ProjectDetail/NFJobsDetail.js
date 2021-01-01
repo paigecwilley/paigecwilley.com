@@ -11,7 +11,7 @@ const imageSets = [
     paragraph:
       "V1 of the the jobs site didn't have a blog. For V2, Netflix knew they wanted to highlight the many experiences and people at Netflix with a blog. I created the content model for the blog in Contentful and created this page from the designs.",
     orientation: "left",
-    paragraphW: "w-1/3",
+    paragraphW: "lg:w-1/3",
     imageSetup: <ImageCreator imageUrl="/static/images/netflix_blog.png" />,
   },
   {
@@ -20,7 +20,7 @@ const imageSets = [
     paragraph:
       "Creating this grid was my favorite part of this project. Based on the designs, each row could have one, two, or three items and each item could be any number of content or media elements with its own constraints and requirements. Architecting this from both a content-modeling standpoint in Contentful and then creating and rendering all the components for that content was a lot of fun for me and a very interesting exercise!",
     orientation: "right",
-    paragraphW: "w-1/2",
+    paragraphW: "lg:w-1/2",
     imageSetup: <ImageCreator imageUrl="/static/images/netflix_grid.png" />,
   },
   {
@@ -29,7 +29,7 @@ const imageSets = [
     paragraph:
       "V1 of this project originally used the Contentful REST API. I started work on V2 using that API. Partway through the project, the team decided the complexities of working with the more complex content could benefit from using Graphql. I moved all the content-based pages over to Graphql, and it definitely made iterating on the new design faster and cleaner.",
     orientation: "left",
-    paragraphW: "w-1/3",
+    paragraphW: "lg:w-1/3",
     imageSetup: (
       <ImageCreator imageUrl="/static/images/netflix_jobs_locations.png" />
     ),

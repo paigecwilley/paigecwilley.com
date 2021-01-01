@@ -14,7 +14,7 @@ const ImageRundown = ({ imageSets }) => {
           <div
             className={`bg-gray-300 rounded-lg p-9 shadow-md ${
               set.orientation === "left" ? "lg:mr-4" : "lg:ml-4"
-            } w-full mb-4 lg:mb-0 lg:${set.paragraphW}`}
+            } w-full mb-4 lg:mb-0 ${set.paragraphW}`}
           >
             <h3 className="mb-5 text-gray-700 font-semibold">{set.title}</h3>
             <p>{set.paragraph}</p>

@@ -4,7 +4,7 @@ module.exports = {
   purge: {
     content: ["./pages/**/*.js", "./src/components/**/*.js"],
     options: {
-      safelist: ["w-1/3", "w-1/2"],
+      // safelist: ["w-1/3", "w-1/2"],
     },
   },
   darkMode: false, // or 'media' or 'class'
