@@ -8,8 +8,11 @@ module.exports = {
       sans: ["HindSiliguri", ...defaultTheme.fontFamily.sans],
     },
     height: {
+      20: "5rem",
+      44: "11rem",
       48: "12rem",
       60: "15rem",
+      72: "18rem",
       96: "24rem",
       108: "32rem",
     },
