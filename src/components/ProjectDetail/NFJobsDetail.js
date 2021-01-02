@@ -12,7 +12,12 @@ const imageSets = [
       "V1 of the the jobs site didn't have a blog. For V2, Netflix knew they wanted to highlight the many experiences and people at Netflix with a blog. I created the content model for the blog in Contentful and created this page from the designs.",
     orientation: "left",
     paragraphW: "lg:w-1/3",
-    imageSetup: <ImageCreator imageUrl="/static/images/netflix_blog.png" />,
+    imageSetup: (
+      <ImageCreator
+        imageUrl="/static/images/netflix_blog.png"
+        height="h-60 lg:h-96"
+      />
+    ),
   },
   {
     image: "/static/images/netflix_grid.png",
@@ -21,7 +26,12 @@ const imageSets = [
       "Creating this grid was my favorite part of this project. Based on the designs, each row could have one, two, or three items and each item could be any number of content or media elements with its own constraints and requirements. Architecting this from both a content-modeling standpoint in Contentful and then creating and rendering all the components for that content was a lot of fun for me and a very interesting exercise!",
     orientation: "right",
     paragraphW: "lg:w-1/2",
-    imageSetup: <ImageCreator imageUrl="/static/images/netflix_grid.png" />,
+    imageSetup: (
+      <ImageCreator
+        imageUrl="/static/images/netflix_grid.png"
+        height="h-60 lg:h-96"
+      />
+    ),
   },
   {
     image: "/static/images/netflix_jobs_teams.png",
@@ -31,7 +41,10 @@ const imageSets = [
     orientation: "left",
     paragraphW: "lg:w-1/3",
     imageSetup: (
-      <ImageCreator imageUrl="/static/images/netflix_jobs_locations.png" />
+      <ImageCreator
+        imageUrl="/static/images/netflix_jobs_locations.png"
+        height="h-60 lg:h-96"
+      />
     ),
   },
 ];

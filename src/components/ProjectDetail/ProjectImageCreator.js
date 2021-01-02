@@ -1,13 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-const ImageCreator = ({ imageUrl, width, minHeightOptional }) => {
+const ImageCreator = ({ imageUrl, width, height }) => {
   return (
-    <div
-      className={` rounded-lg relative shadow-md w-full lg:${width} ${
-        minHeightOptional ? "h-60 lg:h-96" : "h-96 lg:h-108"
-      }`}
-    >
+    <div className={` rounded-lg relative shadow-md w-full ${width} ${height}`}>
       <Image
         src={imageUrl}
         layout="fill"

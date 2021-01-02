@@ -14,6 +14,7 @@ const imageSets = [
       <ImageCreator
         imageUrl="/static/images/vendor_survey_crop.png"
         width="w-2/3"
+        height="h-60 lg:h-96"
       />
     ),
   },
@@ -27,7 +28,7 @@ const imageSets = [
       <ImageCreator
         imageUrl="/static/images/nf_feedback.png"
         width="w-1/2"
-        minHeightOptional
+        height="h-48 lg:h-96"
       />
     ),
   },
@@ -38,7 +39,11 @@ const imageSets = [
     orientation: "left",
     paragraphW: "w-1/2",
     imageSetup: (
-      <ImageCreator imageUrl="/static/images/diff_engine.png" width="w-1/2" />
+      <ImageCreator
+        imageUrl="/static/images/diff_engine.png"
+        width="w-1/2"
+        height="h-60 lg:h-96"
+      />
     ),
   },
 ];
