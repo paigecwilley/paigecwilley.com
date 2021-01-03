@@ -17,7 +17,7 @@ const Overview = ({ stack, rundownText, newThings }) => {
           <h3 className="text-gray-700 font-semibold">Stack</h3>
           <ul>
             {stack.map((stackItem) => (
-              <li className="font-semibold" key={stackItem}>
+              <li className="font-semibold text-red-400" key={stackItem}>
                 {stackItem}
               </li>
             ))}

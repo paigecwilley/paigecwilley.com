@@ -10,9 +10,8 @@ const ImageRundown = ({ imageSets }) => {
             set.orientation === "left" ? "lg:flex-row" : "lg:flex-row-reverse"
           }`}
         >
-          {console.log("paragraphW", set.paragraphW)}
           <div
-            className={`bg-gray-300 rounded-lg p-9 shadow-md ${
+            className={`bg-gray-50 rounded-lg p-9 shadow-md ${
               set.orientation === "left" ? "lg:mr-4" : "lg:ml-4"
             } w-full mb-4 lg:mb-0 ${set.paragraphW}`}
           >
