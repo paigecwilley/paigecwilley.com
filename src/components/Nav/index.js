@@ -4,6 +4,7 @@ import Link from "next/link";
 const linksList = [
   //   { label: "About", link: "#about" },
   { label: "Work", link: "/#work" },
+  { label: "Playlists", link: "/find-a-playlist" },
 ];
 
 const Nav = () => {
@@ -19,7 +20,7 @@ const Nav = () => {
 
         <ul className="flex justify-end">
           {linksList.map((link) => (
-            <li key={link.link} className="inline text-xl font-semibold">
+            <li key={link.link} className="inline text-xl first:mr-4">
               <Link href={link.link}>{link.label}</Link>
             </li>
           ))}

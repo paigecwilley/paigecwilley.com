@@ -35,7 +35,7 @@ const WorkBlock = ({ image, headline, paragraph, type, stack }) => (
       <h3 className="mb-3 text-gray-700 font-semibold">{headline}</h3>
       <p className="text-gray-700 max-w-sm">{paragraph}</p>
     </div>
-    <div className="inline-grid grid-cols-2 gap-5 mb-8 lg:mb-0">
+    {/* <div className="inline-grid grid-cols-2 gap-5 mb-8 lg:mb-0">
       <div>
         <p className="font-semibold">Type</p>
         <p>{type}</p>
@@ -48,7 +48,7 @@ const WorkBlock = ({ image, headline, paragraph, type, stack }) => (
           ))}
         </ul>
       </div>
-    </div>
+    </div> */}
   </div>
 );
 
