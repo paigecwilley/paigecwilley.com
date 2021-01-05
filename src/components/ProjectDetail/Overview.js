@@ -13,11 +13,19 @@ const Overview = ({ stack, rundownText, newThings }) => {
   return (
     <div className="flex flex-col lg:flex-row mb-20">
       {stack ? (
+<<<<<<< HEAD
         <div className="w-full order-2 flex-1 lg:order-1 lg:w-1/4 bg-gray-50 p-9 rounded-lg shadow-md mb-4 lg:mb-0 lg:mr-4">
           <h3 className="text-gray-700 font-semibold">Stack</h3>
           <ul>
             {stack.map((stackItem) => (
               <li className="font-semibold text-red-400" key={stackItem}>
+=======
+        <div className="w-full order-2 lg:order-1 lg:w-1/4 bg-gray-50 p-9 rounded-lg shadow-md mb-4 lg:mb-0 lg:mr-4">
+          <h3 className="text-gray-700 font-semibold">Stack</h3>
+          <ul>
+            {stack.map((stackItem) => (
+              <li className="font-semibold" key={stackItem}>
+>>>>>>> main
                 {stackItem}
               </li>
             ))}
@@ -25,12 +33,20 @@ const Overview = ({ stack, rundownText, newThings }) => {
         </div>
       ) : null}
       {rundownText ? (
+<<<<<<< HEAD
         <div className="w-full flex-2 order-1 lg:order-2 lg:w-1/2 bg-gray-50 p-9 rounded-lg shadow-md mb-4 lg:mb-0 lg:mr-4">
+=======
+        <div className="w-full order-1 lg:order-2 lg:w-1/2 bg-gray-50 p-9 rounded-lg shadow-md mb-4 lg:mb-0 lg:mr-4">
+>>>>>>> main
           <Rundown rundownText={rundownText} />
         </div>
       ) : null}
       {newThings ? (
+<<<<<<< HEAD
         <div className="w-full order-3 flex-1 lg:w-1/4 bg-gray-50 bg-gray-50 p-9 rounded-lg shadow-md">
+=======
+        <div className="w-full order-3 lg:w-1/4 bg-gray-50 bg-gray-50 p-9 rounded-lg shadow-md">
+>>>>>>> main
           <h3 className="text-gray-700 font-semibold">Learning New Things</h3>
           <ul>
             {newThings.map((newItem) => (
