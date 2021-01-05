@@ -42,7 +42,7 @@ const imageSets = [
       <ImageCreator
         imageUrl="/static/images/diff_engine.png"
         width="w-1/2"
-        height="h-60 lg:h-96"
+        height="h-60 lg:h-108"
       />
     ),
   },

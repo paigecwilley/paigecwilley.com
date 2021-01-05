@@ -7,7 +7,7 @@ export default function NFJobs() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Netflix Internal Tool Project - PCW</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
