@@ -10,22 +10,21 @@ const FindAPlaylist = () => {
   const { data, error } = useSWR("/api/playlists", fetcher);
 
   if (error) return <div>failed to load</div>;
-  if (!data) return <div className="my-20 max-w-6xl">loading...</div>;
 
-  console.log(data);
   return (
-    <div className="my-20 max-w-6xl">
+    <div className="my-20 max-w-6xl w-full">
       <h2 className="font-semibold">In a music rut?</h2>
       <h3 className="mb-6 max-w-3xl">
         I've lovingly curated several playlists on Spotify (or jokingly, in one
         case). I've listed some of my favorites here. I hope they can bring you
         as much joy as they've brought me!
       </h3>
-      {data &&
-        data.playlists.map((playlist) => (
-          <PlaylistCard key={playlist.name} {...playlist} />
-        ))}
-      <SpecialPlaylist />
+      {data
+        ? data.playlists.map((playlist) => (
+            <PlaylistCard key={playlist.name} {...playlist} />
+          ))
+        : ["", "", "", ""].map((empty) => <PlaylistCard />)}
+      {data && <SpecialPlaylist />}
     </div>
   );
 };

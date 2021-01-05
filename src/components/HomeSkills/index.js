@@ -39,7 +39,7 @@ const HomeSkills = () => {
         </h4>
       </div>
       <div className="flex flex-col lg:flex-row">
-        <div className="mb-4 lg:mb-0 lg:mr-5  lg:self-start text-left bg-gray-50 flex flex-col rounded-lg shadow-md lg:flex-2 p-9">
+        <div className="mb-4 lg:mb-0 lg:mr-5  lg:self-start text-left bg-gray-50 flex flex-col rounded-lg shadow-md lg:w-1/4 p-9">
           <Button
             active={skillSet === "general"}
             click={() => setSkillSet("general")}
