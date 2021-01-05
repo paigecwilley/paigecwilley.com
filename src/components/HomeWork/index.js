@@ -7,8 +7,16 @@ const WorkList = [
     id: "NFJS",
     image: "/static/images/netflix_jobs_grid.png",
     headline: "Netflix Job Site",
-    paragraph:
-      "V2 of the Netflix Job site. Moved from a REST API to Graphql to query content from Contentful. Built the blog and refreshed designs including architecting the content model and displaying the multimedia grid (pictured).",
+    paragraph: (
+      <p className="text-gray-700 max-w-sm mb-4">
+        V2 of the Netflix Job site. Moved from a REST API to{" "}
+        <span className="text-red-400">Graphql</span> to query content from
+        <span className="text-red-400"> Contentful</span> on{" "}
+        <span className="text-red-400">NextJS</span>. Built the blog and
+        refreshed designs including architecting the content model and
+        displaying the multimedia grid (pictured).
+      </p>
+    ),
     stack: ["NextJS", "Contentful", "Apollo Graphql"],
     type: "Front-end",
     link: "/work/netflix-jobsite",
@@ -18,8 +26,15 @@ const WorkList = [
     id: "NFIT",
     image: "/static/images/vendor_survey_crop.png",
     headline: "Netflix Internal Product",
-    paragraph:
-      "Mountains of evolving data in one place. A tool for receiving, viewing, and editing a lot of data. Includes a Google Forms-style survey builder (pictured).",
+    paragraph: (
+      <p className="text-gray-700 max-w-sm mb-4">
+        Mountains of evolving data in one place. A tool for{" "}
+        <span className="text-red-400">
+          receiving, viewing, and editing a lot of data
+        </span>
+        . Includes a Google Forms-style survey builder (pictured).
+      </p>
+    ),
     stack: ["NextJS", "Apollo Graphql", "Postgres", "Typescript"],
     type: "Front-end",
     link: "/work/netflix-internal-tool",
@@ -36,7 +51,8 @@ const WorkBlock = ({ image, headline, paragraph, link }) => (
     </div>
     <div className="mb-4 flex flex-col max-w-sm">
       <h3 className="mb-3 text-gray-700 font-semibold">{headline}</h3>
-      <p className="text-gray-700 max-w-sm mb-4">{paragraph}</p>
+      {paragraph}
+      {/* <p className="text-gray-700 max-w-sm mb-4">{paragraph}</p> */}
       <div className="w-12 self-end max-w-sm cursor-pointer hover:scale-110">
         <Link href={link} className="cursor-pointer">
           <svg

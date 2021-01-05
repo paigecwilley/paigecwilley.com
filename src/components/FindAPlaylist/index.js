@@ -23,7 +23,7 @@ const FindAPlaylist = () => {
         ? data.playlists.map((playlist) => (
             <PlaylistCard key={playlist.name} {...playlist} />
           ))
-        : ["", "", "", ""].map((empty) => <PlaylistCard />)}
+        : ["", "", "", ""].map(() => <PlaylistCard />)}
       {data && <SpecialPlaylist />}
     </div>
   );
