@@ -41,7 +41,7 @@ const WorkList = [
   },
 
   {
-    id: "NFIT",
+    id: "BB",
     image: "/static/images/boosted_accessories.png",
     headline: "BoostedBoards.com",
     paragraph: (
