@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { BBDetail } from "../../src/components/ProjectDetail";
 
-export default function NFJobs() {
+export default function BoostedBoards() {
   return (
     <>
       <Head>
@@ -16,8 +16,6 @@ export default function NFJobs() {
           <BBDetail />
         </section>
       </main>
-
-      <footer></footer>
     </>
   );
 }

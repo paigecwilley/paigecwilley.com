@@ -14,6 +14,7 @@ const imageSets = [
     paragraphW: "lg:w-1/3",
     imageSetup: (
       <ImageCreator
+        width="lg:w-2/3"
         imageUrl="/static/images/netflix_blog.png"
         height="h-60 lg:h-96"
       />
@@ -28,6 +29,7 @@ const imageSets = [
     paragraphW: "lg:w-1/2",
     imageSetup: (
       <ImageCreator
+        width="lg:w-1/2"
         imageUrl="/static/images/netflix_grid.png"
         height="h-60 lg:h-96"
       />
@@ -39,9 +41,10 @@ const imageSets = [
     paragraph:
       "V1 of this project originally used the Contentful REST API. I started work on V2 using that API. Partway through the project, the team decided the complexities of working with the more complex content could benefit from using Graphql. I moved all the content-based pages over to Graphql, and it definitely made iterating on the new design faster and cleaner.",
     orientation: "left",
-    paragraphW: "lg:w-1/3",
+    paragraphW: "lg:w-1/2",
     imageSetup: (
       <ImageCreator
+        width="lg:w-1/2"
         imageUrl="/static/images/netflix_jobs_locations.png"
         height="h-60 lg:h-96"
       />
