@@ -39,10 +39,27 @@ const WorkList = [
     type: "Front-end",
     link: "/work/netflix-internal-tool",
   },
+
+  {
+    id: "NFIT",
+    image: "/static/images/boosted_accessories.png",
+    headline: "BoostedBoards.com",
+    paragraph: (
+      <p className="text-gray-700 max-w-sm mb-4">
+        Using <span className="text-red-400">NextJS</span> to create a cohesive
+        and delightful shopping experience with{" "}
+        <span className="text-red-400">Shopify</span> and marketing campaigns
+        with <span className="text-red-400">Contentful</span>.
+      </p>
+    ),
+    stack: ["NextJS", "Apollo Graphql", "Contentful", "Shopify"],
+    type: "Front-end",
+    link: "/work/boosted-boards",
+  },
 ];
 
 const WorkBlock = ({ image, headline, paragraph, link }) => (
-  <div className="lg:w-1/2 lg:first:mr-5 text-gray-700">
+  <div className="max-w-1/2 lg:first:mr-5 text-gray-700">
     <div
       className="rounded-md shadow-md relative w-full mb-4"
       style={{ height: 370 }}
@@ -87,7 +104,7 @@ const HomeWork = () => {
         or clients being acquired. So this is just a peek.
       </h4>
 
-      <div className="flex flex-col lg:flex-row">
+      <div className="grid grid-gap-4 grid-cols-1 lg:grid-cols-2">
         {WorkList.map((workItem) => (
           <WorkBlock {...workItem} key={workItem.headline} />
         ))}

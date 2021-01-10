@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Head>
         <title>Paige C. Willey - Developer</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/paige_icon.png" />
       </Head>
 
       <main className="flex flex-col justify-center items-center bg-gray-100 font-sans">
