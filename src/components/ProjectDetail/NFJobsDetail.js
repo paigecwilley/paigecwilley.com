@@ -1,8 +1,17 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Overview from "./Overview";
 import ImageRundown from "./ImageRundown";
 import ImageCreator from "./ProjectImageCreator";
+
+const GraphqlOverview = (
+  <p>
+    V1 of this project originally used the Contentful REST API. I started work
+    on V2 using that API. Partway through the project, the team decided the
+    complexities of working with the more complex content could benefit from
+    using Graphql. I moved all the content-based pages over to Graphql, and it
+    definitely made iterating on the new design faster and cleaner.
+  </p>
+);
 
 const imageSets = [
   {
@@ -16,7 +25,7 @@ const imageSets = [
       <ImageCreator
         width="lg:w-2/3"
         imageUrl="/static/images/netflix_blog.png"
-        height="h-60 lg:h-96"
+        height="h-60 lg:h-108"
       />
     ),
   },
@@ -31,22 +40,23 @@ const imageSets = [
       <ImageCreator
         width="lg:w-1/2"
         imageUrl="/static/images/netflix_grid.png"
-        height="h-60 lg:h-96"
+        height="h-60 lg:h-108"
       />
     ),
   },
   {
     image: "/static/images/netflix_jobs_teams.png",
     title: "Moving to Graphql",
-    paragraph:
-      "V1 of this project originally used the Contentful REST API. I started work on V2 using that API. Partway through the project, the team decided the complexities of working with the more complex content could benefit from using Graphql. I moved all the content-based pages over to Graphql, and it definitely made iterating on the new design faster and cleaner.",
+
+    paragraph: GraphqlOverview,
+
     orientation: "left",
     paragraphW: "lg:w-1/2",
     imageSetup: (
       <ImageCreator
         width="lg:w-1/2"
         imageUrl="/static/images/netflix_jobs_locations.png"
-        height="h-60 lg:h-96"
+        height="h-60 lg:h-108"
       />
     ),
   },
@@ -69,6 +79,7 @@ const NFJobsDetail = () => {
           "Styled-Components",
           "Apollo Graphql",
           "Contentful",
+          "Typescript",
         ]}
         newThings={null}
       />
