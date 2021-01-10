@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Overview from "./Overview";
 import ImageRundown from "./ImageRundown";
 import ImageCreator from "./ProjectImageCreator";
@@ -9,11 +9,11 @@ const imageSets = [
     paragraph:
       "The Netflix team on this project needed a way to create surveys similar to Google Forms to send but integrated into the tool and able to handle additional data points. This had a lot of fun features like dragging and dropping of sections and questions, figuring out how to add and remove questions and sections anywhere, and handling multiple kinds of inputs.",
     orientation: "left",
-    paragraphW: "w-1/3",
+    paragraphW: "w-1/2",
     imageSetup: (
       <ImageCreator
         imageUrl="/static/images/vendor_survey_crop.png"
-        width="w-2/3"
+        width="w-1/2"
         height="h-60 lg:h-96"
       />
     ),

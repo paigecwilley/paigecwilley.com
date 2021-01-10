@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Overview from "./Overview";
 import ImageRundown from "./ImageRundown";
 import ImageCreator from "./ProjectImageCreator";
@@ -23,6 +23,7 @@ const imageSets = [
     paragraphW: "lg:w-1/3",
     imageSetup: (
       <ImageCreator
+        width="lg:w-2/3"
         imageUrl="/static/images/netflix_blog.png"
         height="h-60 lg:h-108"
       />
@@ -34,9 +35,10 @@ const imageSets = [
     paragraph:
       "Creating this grid was my favorite part of this project. Based on the designs, each row could have one, two, or three items and each item could be any number of content or media elements with its own constraints and requirements. Architecting this from both a content-modeling standpoint in Contentful and then creating and rendering all the components for that content was a lot of fun for me and a very interesting exercise!",
     orientation: "right",
-    paragraphW: "lg:w-1/2",
+    paragraphW: "lg:w-1/3",
     imageSetup: (
       <ImageCreator
+        width="lg:w-2/3"
         imageUrl="/static/images/netflix_grid.png"
         height="h-60 lg:h-108"
       />
@@ -45,13 +47,12 @@ const imageSets = [
   {
     image: "/static/images/netflix_jobs_teams.png",
     title: "Moving to Graphql",
-
     paragraph: GraphqlOverview,
-
     orientation: "left",
     paragraphW: "lg:w-1/3",
     imageSetup: (
       <ImageCreator
+        width="lg:w-2/3"
         imageUrl="/static/images/netflix_jobs_locations.png"
         height="h-60 lg:h-108"
       />

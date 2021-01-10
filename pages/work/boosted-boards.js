@@ -1,23 +1,10 @@
-import Head from "next/head";
-import Image from "next/image";
-
+import WorkLayout from "../../src/layouts/workLayout";
 import { BBDetail } from "../../src/components/ProjectDetail";
 
-export default function NFJobs() {
+export default function BoostedBoards() {
   return (
-    <>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col justify-center items-center bg-gray-100 font-sans">
-        <section>
-          <BBDetail />
-        </section>
-      </main>
-
-      <footer></footer>
-    </>
+    <WorkLayout title="Boosted Boards Project">
+      <BBDetail />
+    </WorkLayout>
   );
 }

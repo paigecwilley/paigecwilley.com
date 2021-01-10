@@ -1,97 +1,80 @@
 import React, { useState } from "react";
-import Image from "next/image";
+import Overview from "./Overview";
+import ImageRundown from "./ImageRundown";
+import ImageCreator from "./ProjectImageCreator";
 
-const Rundown = () => {
-  return (
-    <>
-      <h3 className="text-gray-400 font-semibold">Project Overview</h3>
-      <body className="text-gray-600">
-        The Netflix Jobsite has had multiple iterations and versions since
-        Underbelly first re-designed and developed it in 2017. For V2, Netflix
-        wanted to highlight their diversity and inclusion initiatives and make
-        it easier to hire for their various office locations. Working with a
-        designer, I created the blog (including the Contentful model), moved the
-        site from using a REST API to Graphql to query all content from
-        Contentful, and updated designs or added features to every page.
-      </body>
-    </>
-  );
+const stack = ["NextJS (React)", "Graphql", "Contentful", "Shopify"];
+
+const newThings = [
+  "Shopify",
+  "Browser Cookies",
+  "Marketing Integrations (Klaviyo, Criteo)",
+];
+
+const paragraphs = {
+  accessories:
+    "This was my favorite contribution to this project. (I oddly like filters.) Boosted Boards has tons of amazing accessories for their boards, and the team created a new design for shopping those accessories. I took these designs from XD to reality. All the data came from Shopify. I loved building the ui and the functionality for the filters depicted in on the left-hand column. It's always a fun challenge.",
+  summerShowdown:
+    "In summer 2018, Boosted ran their Summer Showdown event. I had the pleasure of building the epic event page with many moving parts. Uploads, modals, cookies, fancy scrolling, animations, forms, Klaviyo email integrations. It was a lot. It was on this part of the project that I built one of my favorite accomplishments to date: a function that would check to make sure all child components had loaded on the page for ultra-precise anchor scrolling.",
+  delightfulDetails:
+    "My lead built the MVP for the board pages, but I got to add that details that delight in a purchase process. This included shopping cart functionality (instead of hosting on Shopify). It also included alternate board view images on board pages that required accurate active states and handling different media types.",
 };
 
 const imageSets = [
   {
-    image: "/static/images/netflix_blog.png",
-    title: "A home for content",
-    paragraph:
-      "V1 of the the jobs site didn't have a blog. For V2, Netflix knew they wanted to highlight the many experiences and people at Netflix with a blog. I created the content model for the blog in Contentful and created this page from the designs.",
+    image: "/static/images/boosted_accessories.png",
+    title: "A new way to shop",
+    paragraph: paragraphs.accessories,
     orientation: "left",
+    paragraphW: "lg:w-1/3",
+    imageSetup: (
+      <ImageCreator
+        width="lg:w-2/3"
+        imageUrl="/static/images/boosted_accessories.png"
+        height="h-60 lg:h-108"
+      />
+    ),
   },
   {
-    image: "/static/images/netflix_grid.png",
-    title: "A new way to display media",
-    paragraph:
-      "Creating this grid was my favorite part of this project. Based on the designs, each row could have one, two, or three items and each item could be any number of content or media elements with its own constraints and requirements. Architecting this from both a content-modeling standpoint in Contentful and then creating and rendering all the components for that content was a lot of fun for me and a very interesting exercise!",
+    image: "/static/images/summer_showdown_detail.png",
+    title: "A event page as epic as summer",
+    paragraph: paragraphs.summerShowdown,
     orientation: "right",
+    paragraphW: "lg:w-1/2",
+    imageSetup: (
+      <ImageCreator
+        width="lg:w-1/2"
+        imageUrl="/static/images/summer_showdown_detail.png"
+        height="h-48 lg:h-96"
+      />
+    ),
   },
   {
-    image: "/static/images/netflix_jobs_teams.png",
-    title: "Moving to Graphql",
-    paragraph:
-      "V1 of this project originally used the Contentful REST API. I started work on V2 using that API. Partway through the project, the team decided the complexities of working with the more complex content could benefit from using Graphql. I moved all the content-based pages over to Graphql, and it definitely made iterating on the new design faster and cleaner.",
+    image: "/static/images/boosted_mini.png",
+    title: "All in the details",
+    paragraph: paragraphs.delightfulDetails,
     orientation: "left",
+    paragraphW: "lg:w-1/3",
+    imageSetup: (
+      <ImageCreator
+        width="lg:w-2/3"
+        imageUrl="/static/images/boosted_mini.png"
+        height="h-60 lg:h-96"
+      />
+    ),
   },
 ];
-
-const ImageRundown = () => {
-  return (
-    <>
-      {imageSets.map((set) => (
-        <div
-          className={`flex mb-20 ${
-            set.orientation === "left" ? "flex-row" : "flex-row-reverse"
-          }`}
-        >
-          <div
-            className={`w-1/3 bg-gray-300 rounded-lg p-9 ${
-              set.orientation === "left" ? "mr-4" : "ml-4"
-            }`}
-          >
-            <h3 className="mb-5">{set.title}</h3>
-            <p>{set.paragraph}</p>
-          </div>
-          <div />
-          <div
-            className="h-96 relative shadow-md"
-            style={{ width: "750px", height: "500px" }}
-          >
-            <Image src={set.image} layout="fill" objectFit="cover" />
-          </div>
-        </div>
-      ))}
-    </>
-  );
-};
 
 const BBDetail = () => {
   return (
     <div className="my-20 max-w-6xl">
-      <h2 className="font-semibold mb-20">Netflix Jobsite</h2>
-      <div className="flex flex-row mb-20">
-        <div className=" w-1/3 bg-gray-50 p-9 rounded-lg shadow-md mr-4">
-          <h3 className="text-gray-400 font-semibold">Stack</h3>
-          <ul>
-            <li className="text-gray-600">NextJS (React)</li>
-            <li className="text-gray-600">Shopify</li>
-            <li className="text-gray-600">Styled-Components</li>
-            <li className="text-gray-600">Apollo Graphql</li>
-            <li className="text-gray-600">Contentful</li>
-          </ul>
-        </div>
-        <div className="w-2/3 bg-gray-50 p-9 rounded-lg shadow-md">
-          <Rundown />
-        </div>
-      </div>
-      <ImageRundown />
+      <h2 className="font-semibold mb-20">Boosted Boards</h2>
+      <Overview
+        rundownText="Boosted Boards was ramping up in 2018 and needed a new website for new releases. My lead built the MVP for the release of the Boosted Mini, and I took over for later marketing initiatives, building on what he'd created. I built and launched the brand new accessories page along with content for multiple marketing campaings and events like their board quiz and the 2018 Summer Showdown. This was a varied project that required working with a number of browser features like cookies and marketing integrations with Klaviyo. Built with NextJS, Contentful, Shopify, and Graphql at the core."
+        stack={stack}
+        newThings={newThings}
+      />
+      <ImageRundown imageSets={imageSets} />
     </div>
   );
 };
